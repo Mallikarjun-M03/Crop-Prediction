@@ -2,13 +2,11 @@ from flask import Flask, render_template, request
 import numpy as np
 import pickle
 
-# Load the crop recommendation model
 crop_recommendation_model_path = 'models/NB.pkl'
 crop_recommendation_model = pickle.load(open(crop_recommendation_model_path, 'rb'))
 
 app = Flask(__name__)
 
-# Define the crop image URLs and background colors
 crop_details = {
     'rice': {'image_url': 'static/images/rice.jpg', 'background_color': '#EAE3DB'},
     'maize': {'image_url': 'static/images/maize.jpg', 'background_color': '#BDC092'},
